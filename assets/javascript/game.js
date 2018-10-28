@@ -28,11 +28,11 @@ var resetAndStart= function (){
     var crystal= $("<div>");
         crystal.attr({"class": "crystal", "data-random": random});
         crystal.css({
-            "background-image":"url(" + images[i]) + " )",
-            "background-image":"url("
+            "background-image":"url('" + images[i]) + "')",
+            "background-size":"cover"
         });
         
-    $(".crystals").append(crystal);
+        $(".crystals").append(crystal);
     }  
     $("#previous").html("Total Score:" + previous);
 }
@@ -42,7 +42,7 @@ resetAndStart();
 //event delegation
 $(document).on('click', "crystal", function() {
     
-    var num= parseInt($(this).attr("data-random"));
+    var num= parseInt($(this).attr("data-random")); //turns into a number
     previous += num;
     $("#previous").html("Total Score:" + previous);
     console.log(previous);
